@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Box</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'box' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <% if !user_signed_in? %>
+    <img
+      src="<%= asset_url("bala.jpg") %>" 
+      class="inset-0 fixed z-0"
+    />
+  <% end %>
+      <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
